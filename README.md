@@ -1,6 +1,9 @@
 # Furbot-MiraiGo
+[![Go Report Card](https://goreportcard.com/badge/github.com/Rehtt/Furbot-MiraiGo)](https://goreportcard.com/report/github.com/Rehtt/Furbot-MiraiGo)
 
 移植于[Furbot-Mirai](https://github.com/furleywolf/Furbot-Mirai)的go开源版本
+
+基于[MiraiGo-Template](https://github.com/Logiase/MiraiGo-Template)开发
 
 ## 安装
 
@@ -28,7 +31,7 @@ go build .
 ./Furbot-MiraiGo
 ```
 
-### 作为模块安装(基于MiraiGo-Template进行开发)
+### 作为模块安装(基于MiraiGo-Template二次开发)
 
 在适当位置引入
 ```go
