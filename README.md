@@ -19,6 +19,14 @@ cd Furbot-MiraiGo
 go install
 Furbot-MiraiGo
 ```
+OR
+
+```shell
+git clone https://github.com/Rehtt/Furbot-MiraiGo
+cd Furbot-MiraiGo
+go build .
+./Furbot-MiraiGo
+```
 
 ### 作为模块安装(基于MiraiGo-Template进行开发)
 
