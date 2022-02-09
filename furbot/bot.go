@@ -60,14 +60,16 @@ func (a *ar) Serve(bot *bot.Bot) {
 			if !match {
 				return
 			}
-			image, err := client.UploadGroupImage(m.GroupCode, img)
-			if err != nil {
-				logger.WithError(err).Error("图片上传失败")
-				return
+			msg := message.NewSendingMessage().Append(message.NewText(text))
+			if img != nil {
+				image, err := client.UploadGroupImage(m.GroupCode, img)
+				if err != nil {
+					logger.WithError(err).Error("图片上传失败")
+					return
+				}
+				msg.Append(image)
 			}
-			client.SendGroupMessage(m.GroupCode, message.NewSendingMessage().
-				Append(message.NewText(text)).
-				Append(image), true)
+			client.SendGroupMessage(m.GroupCode, msg, true)
 		})
 	}
 	if conf.ResponseFriend {
@@ -77,14 +79,17 @@ func (a *ar) Serve(bot *bot.Bot) {
 			if !match {
 				return
 			}
-			image, err := client.UploadPrivateImage(m.Sender.Uin, img)
-			if err != nil {
-				logger.WithError(err).Error("图片上传失败")
-				return
+			msg := message.NewSendingMessage().Append(message.NewText(text))
+			if img != nil {
+				image, err := client.UploadPrivateImage(m.Sender.Uin, img)
+				if err != nil {
+					logger.WithError(err).Error("图片上传失败")
+					return
+				}
+				msg.Append(image)
 			}
-			client.SendPrivateMessage(m.Sender.Uin, message.NewSendingMessage().
-				Append(message.NewText(text)).
-				Append(image))
+
+			client.SendPrivateMessage(m.Sender.Uin, msg)
 		})
 	}
 }

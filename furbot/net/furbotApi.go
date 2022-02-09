@@ -53,6 +53,9 @@ func (f furBotApi) getFurBasic(api string, extraQuery map[string]string) (out mo
 	}
 	json.Unmarshal(response, &out)
 
+	if out.Name == "" {
+		return out, nil
+	}
 	image, err := httpGet(out.Url, nil, nil)
 	if err != nil {
 		return models.ApiResponse{}, err

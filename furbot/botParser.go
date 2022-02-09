@@ -61,5 +61,9 @@ func botParser(str string) (match bool, text string, img io.ReadSeeker) {
 			img = bytes.NewReader(data.Image)
 		}
 	}
+	if data.Name == "" {
+		text = "这只毛毛还没有被收录，请联系开发者添加哦~"
+		img = nil
+	}
 	return
 }
