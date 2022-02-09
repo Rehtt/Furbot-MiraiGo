@@ -47,8 +47,10 @@ func main() {
 	// 刷新好友列表，群列表
 	bot.RefreshList()
 
+	// 监听中断信号
 	ch := make(chan os.Signal, 1)
 	signal.Notify(ch, os.Interrupt)
 	<-ch
+	// 优雅退出
 	bot.Stop()
 }
