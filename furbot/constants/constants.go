@@ -6,7 +6,7 @@
 package constants
 
 const (
-	ApiHost             = "https://api.tail.icu/"
+	//ApiHost             = "https://api.tail.icu/"
 	ApiGetFursuitRand   = "api/v2/getFursuitRand"
 	ApiGetFursuitById   = "api/v2/getFursuitByID"
 	ApiGetFursuitByName = "api/v2/getFursuitByName"
@@ -14,4 +14,8 @@ const (
 	FurPrefixRandom  = "来只毛"
 	FurPrefixGetName = "来只"
 	FurPrefixGetId   = "找毛图"
+)
+
+var (
+	ApiHost = "https://api.tail.icu/"
 )

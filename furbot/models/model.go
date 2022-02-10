@@ -11,4 +11,5 @@ type ConfStruct struct {
 	ShowTail       bool   `yaml:"showTail"`
 	ResponseFriend bool   `yaml:"responseFriend"`
 	ResponseGroup  bool   `yaml:"responseGroup"`
+	Host           string `yaml:"host,omitempty"` // Host切换
 }

@@ -10,6 +10,7 @@ import (
 	"github.com/Logiase/MiraiGo-Template/utils"
 	"github.com/Mrs4s/MiraiGo/client"
 	"github.com/Mrs4s/MiraiGo/message"
+	"github.com/Rehtt/Furbot-MiraiGo/furbot/constants"
 	"github.com/Rehtt/Furbot-MiraiGo/furbot/models"
 	FurBotApi "github.com/Rehtt/Furbot-MiraiGo/furbot/net"
 	"gopkg.in/yaml.v2"
@@ -44,6 +45,10 @@ func (a *ar) Init() {
 	if err != nil {
 		logger.WithError(err).Error("'furbot.yaml' parsing failed")
 		os.Exit(1)
+	}
+	// 切换host
+	if conf.Host != "" {
+		constants.ApiHost = conf.Host
 	}
 	// 初始化
 	FurBotApi.Init(conf.QQ, conf.AuthKey)

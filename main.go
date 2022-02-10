@@ -6,7 +6,6 @@ import (
 	"os/signal"
 
 	"github.com/Logiase/MiraiGo-Template/bot"
-	"github.com/Logiase/MiraiGo-Template/config"
 	"github.com/Logiase/MiraiGo-Template/utils"
 
 	// 载入Furbot模块
@@ -15,7 +14,7 @@ import (
 
 func init() {
 	utils.WriteLogToFS(utils.LogInfoLevel, utils.LogWithStack)
-	config.Init()
+	//config.Init()
 }
 
 func main() {
