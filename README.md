@@ -44,6 +44,17 @@ import (
 ```
 参考[main.go](./main.go)
 
+### 作为插件(golang plugin)
+> 使用插件模式需要使用cgo，只支持linux，并且不能交叉编译
+> 
+> 因为插件需要重新打包，所以总体积会比模块模式大，但更灵活
+```shell
+cd furbot/pluginMode
+go build -buildmode=plugin -o furbot.so .
+cd -
+./Furbot-MiraiGo -p furbot/pluginMode/furbot.so
+```
+
 ## 使用
 第一次运行时会自动生成`furbot.yaml`文件，修改后再次运行即可
 文件内容详解：

@@ -7,6 +7,9 @@ require (
 	github.com/Mrs4s/MiraiGo v0.0.0-20220207115133-8258176fba33
 	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+)
+
+require (
 	github.com/Baozisoftware/qrcode-terminal-go v0.0.0-20170407111555-c0650d8dff0f // indirect
 	github.com/RomiChan/protobuf v0.0.0-20211223055824-048df49a8956 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
