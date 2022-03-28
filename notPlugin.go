@@ -12,6 +12,4 @@ import (
 	_ "github.com/Rehtt/Furbot-MiraiGo/furbot"
 )
 
-func loadPlugin() {
-
-}
+func loadPlugin() {}

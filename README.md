@@ -31,6 +31,14 @@ go build .
 ./Furbot-MiraiGo
 ```
 
+### Docker
+```shell
+git clone https://github.com/Rehtt/Furbot-MiraiGo
+cd Furbot-MiraiGo
+docker build -t furbot:test-1 .
+docker run -d -v ./furbot.yaml:/opt/furbot.yaml furbot:test-1
+```
+
 ### 作为模块安装(基于MiraiGo-Template二次开发)
 
 在适当位置引入
