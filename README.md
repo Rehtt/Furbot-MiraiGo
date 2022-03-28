@@ -48,7 +48,10 @@ import (
 > 使用插件模式需要使用cgo，只支持linux，并且不能交叉编译
 > 
 > 因为插件需要重新打包，所以总体积会比模块模式大，但更灵活
+
+执行命令：
 ```shell
+go build -tags plugin -o Furbot-MiraiGo .
 cd furbot/pluginMode
 go build -buildmode=plugin -o furbot.so .
 cd -

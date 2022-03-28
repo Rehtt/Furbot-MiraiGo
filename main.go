@@ -2,17 +2,13 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"github.com/Logiase/MiraiGo-Template/bot"
 	"github.com/Logiase/MiraiGo-Template/utils"
 	"github.com/Mrs4s/MiraiGo/client"
-	"log"
 	"os"
 	"os/signal"
-	"plugin"
 	// 载入Furbot模块
 	//_ "github.com/Rehtt/Furbot-MiraiGo/furbot"
-	//_ "github.com/Rehtt/Furbot-MiraiGo/send"
 )
 
 func init() {
@@ -20,20 +16,7 @@ func init() {
 	//config.Init()
 }
 
-type pluginPath []string
-
-func (p *pluginPath) String() string {
-	return fmt.Sprint(*p)
-}
-func (p *pluginPath) Set(value string) error {
-	*p = append(*p, value)
-	return nil
-}
-
-var plugins pluginPath
-
 func main() {
-	flag.Var(&plugins, "p", "插件地址")
 	flag.Parse()
 
 	f, err := os.Open("./device.json")
@@ -73,16 +56,4 @@ func main() {
 	<-ch
 	// 优雅退出
 	bot.Stop()
-}
-
-func loadPlugin() {
-	if len(plugins) == 0 {
-		return
-	}
-	for _, p := range plugins {
-		_, err := plugin.Open(p)
-		if err != nil {
-			log.Printf("%s 插件加载失败：%v", p, err)
-		}
-	}
 }
